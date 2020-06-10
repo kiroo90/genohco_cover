@@ -1,0 +1,100 @@
+html {
+  font-size: 10px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 3.7rem 0rem 7rem;
+  border-bottom: 1px solid #8C8C8C;
+  font-weight: bold;
+  font-size: 1.6rem;
+  background: brown;
+  box-sizing: border-box; }
+  .header__logo {
+    width: 21.2rem;
+    height: 4rem;
+    margin: 3rem 0;
+    background: url(../img/main_logo.png) no-repeat 50% 50%;
+    background-size: contain;
+    text-indent: -9999px;
+    cursor: pointer; }
+  .header__nav-gnb__list {
+    display: flex;
+    justify-content: center; }
+  .header__nav-gnb__item__link {
+    display: inline-block;
+    width: 17rem;
+    height: 10rem;
+    line-height: 10rem;
+    text-align: center; }
+  .header__nav-gnb__submenu {
+    position: absolute;
+    padding: 1.3rem 0;
+    font-size: 1.4rem;
+    visibility: hidden;
+    opacity: 0; }
+    .header__nav-gnb__submenu li {
+      padding: 1.3rem 2rem; }
+      .header__nav-gnb__submenu li a {
+        display: inline-block;
+        width: 13rem; }
+  .header__nav-lang {
+    width: 28.1rem; }
+    .header__nav-lang__list {
+      display: flex;
+      justify-content: flex-end; }
+    .header__nav-lang__item {
+      margin-left: 1.6rem;
+      font-size: 1.4rem; }
+      .header__nav-lang__item:nth-child(1) {
+        margin-left: 0; }
+    .header__nav-lang__link {
+      height: 10rem;
+      line-height: 10rem;
+      color: #fff; }
+      .header__nav-lang__link[class$=--color-gray] {
+        color: #D2D3D3; }
+    .header__nav-lang__modal-btn {
+      margin-left: 4rem;
+      font-size: 2.4rem;
+      line-height: 10rem;
+      cursor: pointer; }
+    .header__nav-lang__moblie-btn {
+      position: relative;
+      bottom: -0.2rem;
+      width: 4rem;
+      height: 2rem;
+      margin-left: 4rem;
+      border: none;
+      background: transparent;
+      outline: none;
+      cursor: pointer; }
+      .header__nav-lang__moblie-btn--line-top {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: 4rem;
+        height: 0.2rem;
+        margin-left: 0rem;
+        background: #222222;
+        top: 0rem; }
+      .header__nav-lang__moblie-btn--line-mid {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: 4rem;
+        height: 0.2rem;
+        margin-left: 0rem;
+        background: #222222;
+        top: 0.9rem; }
+      .header__nav-lang__moblie-btn--line-bottom {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        width: 4rem;
+        height: 0.2rem;
+        margin-left: 0rem;
+        background: #222222;
+        top: 1.8rem; }
+      .header__nav-lang__moblie-btn.hide {
+        display: none; }
