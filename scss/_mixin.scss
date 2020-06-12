@@ -1,0 +1,37 @@
+@import "./variables";
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint_desktop}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$breakpoint_tablet}) {
+        @content;
+    }
+}
+
+@mixin line-btn {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 4rem;
+    height: 0.2rem;
+    margin-left: 0rem;
+    background: $color-dark;
+    transition: 0.4s;
+}
+
+@mixin position(
+    $p: absolute,
+    $t: null,
+    $b: null,
+    $l: null,
+    $r: null,
+) {
+    position: $p;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+}
