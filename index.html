@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./src/slick.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>GENOHCO</title>
 </head>
@@ -61,30 +62,31 @@
                         <i class="xi-bars"></i>
                         <span class="clip">모달창 열기 버튼</span>
                     </span>
-                    <button class="header__nav-lang__moblie-btn js-btn">
-                    <span class="header__nav-lang__moblie-btn--line-top js-line-top"></span>
-                    <span class="header__nav-lang__moblie-btn--line-mid js-line-mid"></span>
-                    <span class="header__nav-lang__moblie-btn--line-bottom js-line-bottom"></span>
-                    <span class="clip">모바일 메뉴 열기 버튼</span>
-                    </button>
                 </li>
             </ul>
         </nav>
     </header>
     <!-- 헤더종료-->
-    <nav class="nav-modal nav-modal--hide">
-        <div class="nav-model-container">
-            <div class="nav-modal__header">
-                <h2 class="nav-modal__header__title">사이트맵</h2>
-                <span class="nav-modal__header__close-btn js-modal-btn">
+    <nav class="nav-snb nav-snb--hide">
+        <button class="header__nav-lang__moblie-btn js-moblie-btn">
+            <span class="header__nav-lang__moblie-btn--line-top js-line-top"></span>
+            <span class="header__nav-lang__moblie-btn--line-mid js-line-mid"></span>
+            <span class="header__nav-lang__moblie-btn--line-bottom js-line-bottom"></span>
+            <span class="clip">모바일 메뉴 열기 버튼</span>
+        </button>
+        <div class="nav-snb__bg"></div>
+        <div class="nav-snb-container">
+            <div class="nav-snb__header">
+                <h2 class="nav-snb__header__title">사이트맵</h2>
+                <span class="nav-snb__header__close-btn js-modal-btn">
                     <i class="xi-close-min"></i>
                     <span class="clip">모달창 닫기 버튼</span>
                 </span>
             </div>
-            <ul class="nav-modal__list">
-                <li class="nav-modal__item">
-                    <span>기업정보<i class="xi-bars"></i></span>
-                    <ul>
+            <ul class="nav-snb__list">
+                <li class="nav-snb__item">
+                    <span class="js-moblie-list-btn">기업정보<i class="xi-plus"></i><i class="xi-minus"></i></span>
+                    <ul class="moblie__none">
                         <li><a href="#">기업소개</a></li>
                         <li><a href="#">비전 및 핵심역량</a></li>
                         <li><a href="#">연혁 및 주요인증</a></li>
@@ -94,7 +96,7 @@
                         <li><a href="#">주요거래처</a></li>
                     </ul>
                 </li>
-                <li class="nav-modal__item">
+                <li class="nav-snb__item">
                     <span>사업소개</span>
                     <ul>
                         <li><a href="#">무인화 시스템</a></li>
@@ -104,16 +106,16 @@
                         <li><a href="#">절충교역</a></li>
                     </ul>
                 </li>
-                <li class="nav-modal__item">
-                    <span>인재채용<i class="xi-bars"></i></span>
-                    <ul>
+                <li class="nav-snb__item">
+                    <span class="js-moblie-list-btn">인재채용<i class="xi-plus"></i><i class="xi-minus"></i></span>
+                    <ul class="moblie__none">
                         <li><a href="#">인재상</a></li>
                         <li><a href="#">인사제도</a></li>
                     </ul>
                 </li>
-                <li class="nav-modal__item">
-                    <span>고객지원<i class="xi-bars"></i></span>
-                    <ul>
+                <li class="nav-snb__item">
+                    <span class="js-moblie-list-btn">고객지원<i class="xi-plus"></i><i class="xi-minus"></i></span>
+                    <ul class="moblie__none">
                         <li><a href="#">온라인 문의</a></li>
                     </ul>
                 </li>
@@ -124,18 +126,23 @@
     <section class="main">
         <!-- beforeLine -->
         <figure class="main__slide-container main__slide-container--moblie">
-            <!-- <img src="./img/slide_m_img.jpg" alt=""> -->
+            <img src="./img/slide_m_img.jpg" alt="" data-dot="무인화 시스템">
+            <img src="./img/slide_m_img_02.jpg" alt="" data-dot="위성통신">
+            <img src="./img/slide_m_img_03.jpg" alt="" data-dot="우주항공전자">
+            <img src="./img/slide_m_img_04.jpg" alt="" data-dot="기타사업">
+            <img src="./img/slide_m_img_05.jpg" alt="" data-dot="절충교역">
         </figure>
         <ul class="main__slide-dots">
-            <li class="main__slide-dots__item"><a href="#"><span>무인화 시스템</span></a></li>
-            <li class="main__slide-dots__item"><a href="#"><span>위성통신</span></a></li>
-            <li class="main__slide-dots__item"><a href="#"><span>우주항공전자</span></a></li>
-            <li class="main__slide-dots__item"><a href="#"><span>기타사업</span></a></li>
-            <li class="main__slide-dots__item"><a href="#"><span>절충교역</span></a></li>
-        </ul>
+            <li class="main__slide-dots__item"><a href="#" class="link" data-dot="무인화 시스템"><span>무인화 시스템</span></a></li>
+            <li class="main__slide-dots__item"><a href="#" class="link" data-dot="위성통신"><span>위성통신</span></a></li>
+            <li class="main__slide-dots__item"><a href="#" class="link" data-dot="우주항공전자"><span>우주항공전자</span></a></li>
+            <li class="main__slide-dots__item"><a href="#" class="link" data-dot="기타사업"><span>기타사업</span></a></li>
+            <li class="main__slide-dots__item"><a href="#" class="link" data-dot="절충교역"><span>절충교역</span></a></li>
+        </ul> 
         <div class="main__info">
             <h2 class="main__info__logo">제노코</h2>
             <p class="main__info__text">최고를 추구하는 기업 제노코</p>
+            <div class="main__info__gif-icon">돌아가는 지구</div>
         </div>
         <div class="main__online-inquiry">
             <a href="#">
@@ -162,6 +169,8 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
     </script>
+    <script src="./js/slide.js"></script>
+    <script src="./src/slick.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>

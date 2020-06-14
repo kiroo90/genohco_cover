@@ -1,0 +1,128 @@
+@import "./mixin";
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    @include position (
+        $t:68%,
+        $l:50%
+    );
+    transform: translate(-50%,-50%);
+
+    .slick-active {
+        button {
+            &::before{
+                @include position(
+                    $t:50%,
+                    $l:50%
+                );
+                transform: translate(-50%,-50%);
+                width: 4.4rem;
+                height: 4.4rem;
+                border-radius: 2.2rem;
+                background: url(../img/slide_nav_icon.png) no-repeat 50% 50%;
+                background-size: contain;
+                opacity: 1;
+
+            }
+            &::after{
+                width: 1.6rem;
+                height: 1.6rem;
+                background: url(../img/language_icon_gif.gif) no-repeat 50% 50%;
+                background-size: contain;
+                opacity: 1;
+            }
+        }
+    }
+    li {
+        margin: 0 1.5rem;
+        button{
+            position: relative;
+            width: 2.6rem;
+            height: 2.6rem;
+            border: none;
+            background: transparent;
+            text-indent: -9999px;
+            outline: none;
+            &::before {
+                content: "";
+                display: inline-block;
+                @include position(
+                    $t:0,
+                    $l:0
+                );
+                width: 2.6rem;
+                height: 2.6rem;
+                border-radius: 1.3rem;
+                background: $color-gray_02;
+                opacity: 0.3;
+                transition: background 0.5s;
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                @include position(
+                    $t:50%,
+                    $l:50%
+                );
+                transform: translate(-50%,-50%);
+                width: 1rem;
+                height: 1rem;
+                border-radius: 0.5rem;
+                background: $color-gray_02;
+                opacity: 0.5;
+                transition: background 0.5s;
+            }  
+        }
+    }
+}
+
+.main {
+    @include position(
+        $p:relative,
+    );
+    &__info {
+        @include position (
+            $t:34%,
+            $l: 50%
+        );
+        transform: translate(-50%,-50%);
+        text-align: center;
+        &__logo{
+            width: 28rem;
+            height: 5rem;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+            background: url(../img/main_logo.png) no-repeat 50% 50%;
+            background-size: contain;
+            text-indent: -9999px;
+        }
+        &__text {
+            font-size: 1.2rem;
+            color: $color-white;
+            letter-spacing: 0.4em;
+        }
+        &__gif-icon {
+            @include position(
+                $t:11%
+            );
+            width: 27.8rem;
+            height: 3.2rem;
+            margin: 0 auto;
+            background: url(../img/language_icon_gif.gif) no-repeat 50% 50%;
+            background-size: contain;
+            text-indent: -9999px;
+        }
+    }
+    &__slide-dots{
+        @include position($t: 50%);
+        width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
+        &__item {
+            span {
+                color: $color-white;
+            }
+        }
+    }
+}

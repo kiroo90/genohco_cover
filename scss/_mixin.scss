@@ -13,12 +13,10 @@
 
 @mixin line-btn {
     display: inline-block;
-    position: absolute;
-    left: 0;
-    width: 4rem;
-    height: 0.2rem;
+    width: 2rem;
+    height: 0.1rem;
     margin-left: 0rem;
-    background: $color-dark;
+    background: $color-white;
     transition: 0.4s;
 }
 
