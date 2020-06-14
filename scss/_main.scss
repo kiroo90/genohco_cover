@@ -81,6 +81,16 @@
     @include position(
         $p:relative,
     );
+    // margin-top: 0rem;
+    &__slide-container {
+        &--web {
+            display: none;
+        }
+        img {
+            outline: none;
+        }
+    }
+    
     &__info {
         @include position (
             $t:34%,
@@ -115,7 +125,7 @@
         }
     }
     &__slide-dots{
-        @include position($t: 50%);
+        @include position($t: 52%);
         width: 100%;
         text-align: center;
         font-size: 1.4rem;
@@ -124,5 +134,238 @@
                 color: $color-white;
             }
         }
+    }
+    &__online-inquiry {
+        display: none;
+    }
+    &__scroll-icon{
+        @include position($b:3rem);
+        width: 100%;
+        font-size: 1rem;
+        color: $color-white;
+        text-align:center;
+        text-transform: uppercase;
+        opacity: 1;
+        animation: scrollIcon 1.2s infinite;
+        i {
+            font-size: 3rem;
+            margin-bottom: .4rem;
+        }
+        &--font-roboto {
+            @include roboto;
+            opacity:0.6;
+        }
+    }
+}
+
+@include tablet {
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin-top: 0rem;
+        &__slide-container {
+            &--web {
+                display: block;
+            }
+            &--moblie {
+                display: none;
+            }
+            img {
+                height: 100vh;
+                object-fit: cover !important;
+                &.slick-active{
+                    animation: slideImg 4.2s linear both .5s;
+                }
+                
+            }
+        }   
+        &__info {
+            @include position (
+                $t:50%
+            );
+            &__logo{
+                width: 64rem;
+                height: 11.6rem;
+            }
+            &__text {
+                font-size: 2rem;
+                letter-spacing: 1em;
+            }
+            &__gif-icon {
+                @include position(
+                    $t:13.5%
+                );
+                width: 63.5rem;
+                height: 7.5rem;
+            }
+        }
+        &__slide-dots{
+            @include position($t: 75%);
+            font-size: 1.6rem;
+        }
+        &__scroll-icon{
+            font-size: 1.4rem;
+            i {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .slick-dots {
+        @include position (
+            $t:83%,
+        );
+        .slick-active {
+            button {
+                &::before{
+                    width: 7rem;
+                    height: 7rem;
+                    border-radius: 4rem;
+                }
+                &::after{
+                    width: 2.6rem;
+                    height: 2.6rem;
+                    border-radius: 1.3rem;
+                }
+            }
+        }
+        li {
+            margin: 0 3rem;
+        }
+    }
+}
+@include desktop {
+    .main {
+        position: relative;
+        margin-top: -10rem;
+        &::after {
+            content: "";
+            display: block;
+            @include position($t:10rem,$l:10rem);
+            width: 100vw;
+            height: 1px;
+            background: $color-gray_02;
+            opacity: 0.3;
+        }
+        &::before{
+            content: "";
+            display: block;
+            @include position($t:10.1rem,$l:10rem);
+            z-index: 1;
+            width: 1px;
+            height: 100%;
+            background: $color-gray_02;
+            opacity: 0.3;
+        }
+        &__slide-dots {
+            display: none;
+        }
+        &__online-inquiry {
+            display: block;
+            @include position ($t:50%,$r:0);
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            &::after {
+                display: inline-block;
+                content: "";
+                width: 1rem;
+                height: 30rem;
+                background: $bg-gradient;
+                vertical-align: middle;
+            }  
+            a {
+                position: relative;
+                color: $color-white;
+                line-height: 2rem;
+                &::after {
+                    display: inline-block;
+                    content: "";
+                    width: 10rem;
+                    height: 1px;
+                    margin: 0 1.4rem;
+                    background: $color-white;
+                    vertical-align: 0.4rem;
+                }
+                i {
+                    font-size: 2.6rem;
+                    margin-right: 1rem;
+                    vertical-align: -0.6rem;
+                }     
+            }
+
+        }
+    }
+    .slick-dots {
+        display: block;
+        @include position (
+            $t:50%,
+            $l:8.75rem
+        );
+        transform: translate(0,-50%);
+        .slick-active {
+            button {
+                font-weight: bold;
+                opacity: 1;
+                &::before{
+                    @include position(
+                        $t:50%,
+                        $l:50%
+                    );
+                    transform: translate(-50%,-50%);
+                }
+                &::after{
+                    @include position(
+                        $t:50%,
+                        $l:50%
+                    );
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+        li {
+            margin: 4rem 0rem;
+            padding: 1.6rem 0;
+            cursor: pointer;
+            button{
+                text-indent: 0;
+                color: $color-white;
+                opacity: 0.6;
+                cursor: pointer;
+                .text {
+                    display: inline-block;
+                    width: 10rem;
+                    padding-left: 6rem;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    letter-spacing: -0.1rem;
+                    text-align: left;
+                } 
+            }
+        }
+    }
+}
+
+@keyframes scrollIcon{
+    0% {
+        transform: translateY(0.6rem);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-0.6rem);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0.6rem);
+        opacity: 0.2;
+    }
+}
+
+
+@keyframes slideImg{
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }

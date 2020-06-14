@@ -41,4 +41,7 @@ $(document).ready(()=>{
             $(e.currentTarget).find($icon).addClass("none");
         }
     });
+    $(".slick-dots li").hover((e)=>{
+        $(e.currentTarget).addClass("slick-active")
+    })
 });
