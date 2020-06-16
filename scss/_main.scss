@@ -12,11 +12,11 @@
     .slick-active {
         button {
             &::before{
-                @include position(
-                    $t:50%,
-                    $l:50%
-                );
-                transform: translate(-50%,-50%);
+                // @include position(
+                //     $t:50%,
+                //     $l:50%
+                // );
+                // transform: translate(-50%,-50%);
                 width: 4.4rem;
                 height: 4.4rem;
                 border-radius: 2.2rem;
@@ -48,15 +48,16 @@
                 content: "";
                 display: inline-block;
                 @include position(
-                    $t:0,
-                    $l:0
+                    $t:50%,
+                    $l:50%
                 );
+                transform: translate(-50%,-50%);
                 width: 2.6rem;
                 height: 2.6rem;
                 border-radius: 1.3rem;
                 background: $color-gray_02;
                 opacity: 0.3;
-                transition: background 0.5s;
+                transition: 0.5s;
             }
             &::after {
                 content: "";
@@ -71,7 +72,7 @@
                 border-radius: 0.5rem;
                 background: $color-gray_02;
                 opacity: 0.5;
-                transition: background 0.5s;
+                transition: 0.5s;
             }  
         }
     }
@@ -91,7 +92,7 @@
         }
     }
     
-    &__info {
+    &-info {
         @include position (
             $t:34%,
             $l: 50%
@@ -124,7 +125,7 @@
             text-indent: -9999px;
         }
     }
-    &__slide-dots{
+    &-slide-dots{
         @include position($t: 52%);
         width: 100%;
         text-align: center;
@@ -179,7 +180,7 @@
                 
             }
         }   
-        &__info {
+        &-info {
             @include position (
                 $t:50%
             );
@@ -199,7 +200,7 @@
                 height: 7.5rem;
             }
         }
-        &__slide-dots{
+        &-slide-dots{
             @include position($t: 75%);
             font-size: 1.6rem;
         }
@@ -244,7 +245,7 @@
             @include position($t:10rem,$l:10rem);
             width: 100vw;
             height: 1px;
-            background: $color-gray_02;
+            background:$color-white;
             opacity: 0.3;
         }
         &::before{
@@ -254,10 +255,10 @@
             z-index: 1;
             width: 1px;
             height: 100%;
-            background: $color-gray_02;
+            background: $color-white;
             opacity: 0.3;
         }
-        &__slide-dots {
+        &-slide-dots {
             display: none;
         }
         &__online-inquiry {

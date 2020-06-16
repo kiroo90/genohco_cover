@@ -106,3 +106,13 @@ a {
     height: 1px;
     overflow: hidden;
 }
+
+.cf:before,
+.cf:after {
+    content: " "; 
+    display: table; 
+}
+ 
+.cf:after {
+    clear: both;
+}
