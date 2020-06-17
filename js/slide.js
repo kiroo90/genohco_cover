@@ -22,4 +22,24 @@ $(()=>{
         slidesToShow: 1,
         asNavFor: ".main__slide-container"
     });
+
+    $(".footer-slider-con__item").slick({
+        slidesToShow: 6,
+        arrows: false,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    })
 })

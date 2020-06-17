@@ -13,14 +13,19 @@
         padding: 2.4rem ;
         box-sizing: border-box;
         &--left {
-            background: linear-gradient(90deg, #FF6F38 0%, #EF433F 100%);;
+            background: $bg-gradient;
         }
         &--right {
-            background: url(../img/banner_img.jpg) no-repeat 50% 50%;
-            background-size: cover;
+            position: relative;
+            overflow: hidden;
         }
     }
-
+    &__img {
+            @include position($t:0,$l:0);
+            z-index: -1;
+            object-fit: cover;
+            transition: 0.4s;
+    }
     &__title {
         padding-bottom: 3.5rem;
         font-weight: 500;
@@ -47,12 +52,31 @@
     &__item {
         display: flex;
     }
-    &__img {
+    &__box {
+        position: relative;
         width: 50%;
-        background:url(../img/main_img.jpg) no-repeat 50% 50%;
-        background-size: cover;
+        padding-top: 33.75%;
+        background-color: $color-white;
+        box-sizing: border-box;   
+        div {
+            @include position($t:50%,$l:8%,$r:8%);
+            transform: translateY(-50%);
+        }
+    }
+    &__img-box {
+        position: relative;
+        width: 50%;
         padding-top: 33.75%; 
         font-size: 0;
+        overflow: hidden;
+    }
+    &__img {
+        @include position($t:0,$l:0);
+        width: 100%;
+        height: 100%;
+        background:url(../img/main_img.jpg) no-repeat 50% 50%;
+        background-size: cover;
+        transition: 0.4s;
         &[class*=--img02] {
             background:url(../img/main_img_02.jpg) no-repeat 50% 50%;
             background-size: cover;
@@ -65,16 +89,22 @@
             background:url(../img/main_img_04.jpg) no-repeat 50% 50%;
             background-size: cover;
         }
-    }
-    &__box {
-        position: relative;
-        width: 50%;
-        padding-top: 33.75%;
-        box-sizing: border-box;    
-        div {
-            @include position($t:50%,$l:8%,$r:8%);
-            transform: translateY(-50%);
+        &--bg{
+            @include position($t:0,$l:0);
+            width: 100%;
+            height: 0;
+            background: $bg-gradient;
+            opacity: 0;
+            transition: 0.4s;
         }
+    }
+    &__icon {
+        @include position($t:0,$l:50%);
+        transform: translate(-50%,-50%);
+        font-size: 5rem;
+        color: $color-white;
+        opacity: 0;
+        transition: 0.4s;
     }
     &__title {
         margin-bottom: 1.6rem;
@@ -92,7 +122,113 @@
             display: none;
         }
     }
+    &__btn {
+        display: none;
+    }
 }
+.online-inquiry-form {
+    &__img--bg {
+        padding: {
+            top:3.5rem;
+            bottom: 1.5rem;
+        };
+        background: url(../img/inquiry_img.jpg) no-repeat 50%;
+        background-size: auto 100%;
+        h2 {
+            margin-bottom: 3rem;
+            font-size: 2.6rem;
+            color: $color-white;
+            text-align: center;
+        }
+    }
+    form {
+        padding: 0 1.6rem;
+    }
+    &--left {
+        width: 100%;
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color-gray_02;
+            border-bottom-color: rgba(255,255,255,0.2);
+            outline: none;
+            &:focus {
+                &::-webkit-input-placeholder {
+                    color: transparent
+                }
+                &::-moz-placeholder{
+                    color: transparent
+                }
+                &:-ms-input-placeholder {
+                    color: transparent
+                }
+                &::-ms-input-placeholder {
+                    color: transparent
+                }
+            }
+            &[type="text"]{
+                padding: 1.6rem 0;
+                color: $color-white;
+                opacity: 0.7;
+                &:focus {
+                    opacity: 1;
+                    color: $color-white;
+                }
+            }
+            
+            &::placeholder {
+                font-weight: bold;
+                color: rgba(255,255,255,0.8);
+            }
+        }   
+    }
+    &--right {
+        span {
+            display: block;
+            width: 100%;
+            padding: 1.6rem 0;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+        }
+        textarea {
+            width: calc(100% - 0.6rem);
+            height: 16rem;
+            border: 1px solid $color-gray_02;
+            font-weight: bold;
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.2);
+            color: $color-white;
+            resize: none;
+            outline: none;
+        }
+    }
+    &__check-box {
+        padding: 2rem 0;
+        font-size: 1.2rem;
+        text-align: center;
+        color: rgba(255,255,255,0.6);
+        p {
+            display: inline-block;
+            vertical-align: 2px;
+            a {
+                color: rgba(255,255,255,0.6);
+                text-decoration: underline;
+            }
+        }
+    }
+    &__btn {
+        width: 100%;
+        height: 5rem;
+        border: none;
+        font-weight: bold;
+        font-size: 1.6rem;
+        background: $bg-gradient;
+        color: $color-white;
+        letter-spacing: 0.375em;
+    }
+}
+
 
 @include tablet {
     .main-content {
@@ -134,7 +270,7 @@
             float: left;
             width: 25%;
         }
-        &__img {
+        &__img-box {
             width: 100%;
             padding-top: 67.5%; 
         }
@@ -176,6 +312,49 @@
             }
         }
     }
+    .online-inquiry-form {
+        width: 100%;
+        &__img--bg {
+            position: relative;
+            padding: {
+                top:8rem;
+                bottom: 19rem;
+            };
+            background: url(../img/inquiry_img.jpg) no-repeat 50% 50%;
+            background-size: cover;
+            background-attachment: fixed;
+            h2 {
+                margin-bottom: 9rem;
+                font-size: 3.6rem;
+            }
+        }
+        form {
+            max-width: 110rem;
+            margin: 0 auto;
+            padding: 0;
+        }
+        &--left {
+            width: 47.5%;
+            float: left; 
+            padding: 1.6rem 0;
+        }
+        &--right {
+            width: 47.5%;
+            float: right;
+        }
+        &__check-box {
+            padding: 3rem 0 0 0;
+            font-size: 1.4rem;
+        }
+        &__btn {
+            @include position($b:-5rem,$l:50%);
+            transform:translateX(-50%);
+            width: 30rem;
+            height: 10rem;
+            cursor: pointer;
+            outline: none;
+        }
+    }
 }
 
 @include desktop {
@@ -183,6 +362,11 @@
         &__banner {
             padding: 5rem ;
             cursor: pointer;
+            &--right:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
         }
         &__title {
             padding-bottom: 9rem;
@@ -206,17 +390,43 @@
         };
     };
     .main-info-con {
-        &__img {
+        &__item {
+            cursor: pointer;
+            &:hover {
+                .main-info-con__img {
+                    transform: scale(1.1);
+                }
+                .main-info-con__img--bg {
+                    height: 100%;
+                    opacity: 0.5;
+                }
+                .main-info-con__icon {
+                    top:50%;
+                    opacity: 1;
+                }
+            }
+        }
+        &__img-box {
             padding-top: 58.6854%;
         }
         &__box {
             padding-top: 58.6854%;
-            }
         }
         &__txt {
             &--hide {
                 display: block;
             }
+        }
+        &__btn {
+            display: block;
+            margin-top: 3rem;
+            width: 3.6rem;
+            height: 3.6rem;
+            border: 1px solid $color-gray_02;
+            color: $color-gray_02;
+            font-size: 2rem;
+            line-height: 3.6rem;
+            text-align: center;
         }
     }
 }

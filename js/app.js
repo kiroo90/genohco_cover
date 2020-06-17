@@ -8,6 +8,7 @@ $(document).ready(()=>{
     const $modalBtn = $(".js-modal-btn");
     const $moblieBtn = $(".js-moblie-btn");
     const $accordionBtn = $(".js-moblie-list-btn");
+    const $icon = $(".xi-plus");
 
     $(window).scroll(()=>{
         const scroll = $header.offset().top;
@@ -39,9 +40,10 @@ $(document).ready(()=>{
         $($accordionBtn).removeClass("active");
         $(".nav-snb__bg").toggleClass("active");
         $accordionBtn.next().slideUp(); //네비가 닫힐때 열려있던 메뉴 닫기
+        $icon.removeClass("none"); //네비가 닫힐때 네비 아이콘 none제거
+
     });
     $accordionBtn.on("click", (e)=>{
-        const $icon = $(".xi-plus");
         $(e.currentTarget).find($icon).toggleClass("none");
         $(e.currentTarget).next().slideToggle();
         $accordionBtn.not(e.currentTarget).next().slideUp();

@@ -1,13 +1,12 @@
 $color-dark: #222222;
-$color-gray: #8C8C8C;
-$color-gray_02: #D2D3D3;
+$color-gray: #aaa;
+$color-gray_02: #999;
 $color-gray_03: #666;
 $color-accent: #ed8942;
 $color-accent_02: #ED1C2A;
 $color-white:#fff;
-$bg-gray: #F4F4F4;
 $bg-gray_02: #EEE;
-$bg-gradient: linear-gradient(to bottom, rgba(255,111,55,1) 0%,rgba(238,64,63,1) 100%);
+$bg-gradient: linear-gradient(90deg, #FF6F38 0%, #EF433F 100%);
 
 $breakpoint_desktop : 1250px;
 $breakpoint_tablet : 800px;
