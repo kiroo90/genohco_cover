@@ -26,3 +26,4 @@ BEM,scss를 처음 사용하여 버벅임이 있었고 다음 작업은 좀 더 
 생각보다 float,inline 개념이 부족한듯
 
 textarea를 사용할때 알수없는 추가 widht값이 있어서 calc를 사용하여 반응형을 구현
+    * box-sizing: border-box; 로 해결
